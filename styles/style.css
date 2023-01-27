@@ -19,7 +19,7 @@ body{
 }
 
 img{
-    height: 1.2em;
+    height: 1.5em;
 }
 
 img path{
@@ -39,21 +39,50 @@ img path{
     grid-row: 1 / 2;
     grid-template-columns: 3fr 2fr;
     gap: var(--horizontal-gap); 
-    padding: var(--vertical-gap) 4vw;    
+    padding: var(--vertical-gap) 4vw;
+    box-shadow: 0 5px 5px -4px #778DA9;
+    z-index: 1;
 }
 
 .header>div{
     display: flex;
     align-items: center;
-    gap: var(--horizontal-gap);
+    gap: 20px;
 }
 
 .user-section{
-    justify-content: right;    
+    justify-content: right;
+    font-weight: bold;
+}
+
+.profile-img{
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.username-section>.profile-img{
+    width: 5rem;
+    height: 5rem;
+}
+
+#user-name{
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .btn-section{
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+button{
+    background-color: #1B263B;
+    color: white;
+    border-style: none;
+    border-radius: 1em;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.4em 1.2em;
 }
 
 #search{
@@ -87,15 +116,20 @@ img path{
 .side-bar > div>div{
     justify-self: start;
 }
+.btn{
+    cursor: pointer;
+}
+.btn:active{
+    transform: translateY(2px);
+}
 
 /* ----------------Main content-------------------- */
 .main-content{
     background-color: #E0E1DD;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-}
-
-.main-content{
+    column-gap: 2vw;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -125,6 +159,11 @@ img path{
     display: flex;
     align-items: center;
     gap: var(--horizontal-gap);
+}
+
+.main-content > div > div:first-child{
+    font-weight: bold;
+    font-size: x-large;
 }
 
 
