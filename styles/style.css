@@ -22,10 +22,6 @@ img{
     height: 1.5em;
 }
 
-img path{
-    fill: aquamarine;
-}
-
 .container{
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -40,14 +36,14 @@ img path{
     grid-template-columns: 3fr 2fr;
     gap: var(--horizontal-gap); 
     padding: var(--vertical-gap) 4vw;
-    box-shadow: 0 5px 5px -4px #778DA9;
+    box-shadow: 0 5px 5px -4px gray;
     z-index: 1;
 }
 
 .header>div{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .user-section{
@@ -56,15 +52,14 @@ img path{
 }
 
 .profile-img{
-    display: inline-block;
-    height: 3rem;
-    width: 3rem;
+    height: 50px;
+    width: 50px;
     overflow: hidden;
     border-radius: 50%;
 }
 .username-section>.profile-img{
-    width: 5rem;
-    height: 5rem;
+    width: 100px;
+    height: 100px;
 }
 
 #user-name{
@@ -73,51 +68,52 @@ img path{
 }
 
 .btn-section{
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-end;
 }
 button{
-    background-color: #1B263B;
+    background-color: #023047;
     color: white;
     border-style: none;
     border-radius: 1em;
     font-size: large;
     font-weight: bold;
-    padding: 0.4em 1.2em;
+    padding: 0.4em 1.5em;
 }
 
 #search{
     flex: 1;
-    background-color: #E0E1DD;
+    background-color: #bde0fe;
     border-radius: 1em;
     border-style: none;
     padding: 0.5em 1em;
 }
 /* ----------------Side bar-------------------- */
 .side-bar{
-    background-color: #1B263B;
+    background-color: #023047;
     color: white;
     grid-column: 1 / 2;
     grid-row: 1 / 3; 
     padding-top: 2vh;
+    padding-left: 2vw;
     display: flex;
     flex-direction: column;
     gap: 5vh;
 }
 
 .side-bar > div{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: center;
-    justify-items: right;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     font-size: 1.2rem;
     font-weight: bold;
 }
-.side-bar > div>div{
-    justify-self: start;
-}
+
 .btn{
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 .btn:active{
     transform: translateY(2px);
@@ -125,45 +121,100 @@ button{
 
 /* ----------------Main content-------------------- */
 .main-content{
-    background-color: #E0E1DD;
+    background-color: #bde0fe;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    column-gap: 2vw;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    gap: 2vw;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 2vh 4vw; 
+    padding: 2vh 4vw;
 }
+
+.projects-card{
+    border-left-color:#fb8500;
+    border-left-width: 10px;
+    border-left-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
+}
+
+.projects-card, 
+.trending-projects,
+.announcements{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    font-size: small;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px gray;
+    padding: 20px;
+}
+
 .content-left{
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
-}
-
-.cards-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
 }
 
-.content-right-up{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+.content-left, 
+.content-right{    
+    align-content: stretch;
+    gap: 20px;
 }
 
-.content-right-down{
+.projects-card>div:last-child{
+    display: flex;
+    align-self: flex-end;
+    gap: 1vw;
+}
+
+.content-right{
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    display: grid;
+    grid-template-rows: auto 1fr auto 1fr;
+}
+
+.announce-txt{
+    font-size: x-small;
+}
+.announcements > div:nth-child(2),
+.announcements > div:nth-child(4){
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding: 5px;
+    margin-bottom: 15px;
 }
 
 .trending-projects>div{
     display: flex;
     align-items: center;
     gap: var(--horizontal-gap);
+    margin-bottom: 10px;
 }
 
-.main-content > div > div:first-child{
+.content-title{
     font-weight: bold;
     font-size: x-large;
+    height: min-content;
 }
+#content-title{
+    grid-column: 1 / 3;
+    /* align-self: start; */
+}
+
+.card-title, 
+.announce-title {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.trending-user{
+    font-weight: bold;
+    font-size: medium;
+}
+
+
 
 
